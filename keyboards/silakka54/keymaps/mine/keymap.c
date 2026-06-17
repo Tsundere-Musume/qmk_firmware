@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [SYM] = LAYOUT(
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_GRV,  KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                     KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR,  KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_EXLM, KC_ASTR, KC_SLASH,KC_PEQL, KC_AMPR,                     KC_HASH, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO, KC_TRNS,
+        KC_TRNS, KC_EXLM, KC_ASTR, KC_SLASH,KC_EQL,  KC_AMPR,                     KC_HASH, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO, KC_TRNS,
         KC_TRNS, KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                     KC_AT,   KC_COLN, KC_COMM, KC_DOT,  KC_QUOT, KC_TRNS,
                                             KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS
     ),
@@ -58,16 +58,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
-bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
-    return true;
-    // switch (keycode) { // These keys may be speculatively held.
-    //     case LCTL_T(KC_ESC):
-    //     case LSFT_T(KC_Z):
-    //     case RSFT_T(KC_SLSH):
-    //         return true;
-    // }
-    // return false; // Disable otherwise.
-}
+///////////////////////////////////////////////////////////////////////////////
+// Speculative hold (https://docs.qmk.fm/tap_hold#speculative-hold)
+///////////////////////////////////////////////////////////////////////////////
+// bool get_speculative_hold(uint16_t keycode, keyrecord_t* record) {
+//     //enable true for all modifiers
+//     return true;
+//
+//     // switch (keycode) { // These keys may be speculatively held.
+//     //     case LCTL_T(KC_ESC):
+//     //     case LSFT_T(KC_Z):
+//     //     case RSFT_T(KC_SLSH):
+//     //         return true;
+//     // }
+//     // return false; // Disable otherwise.
+// }
+
 ///////////////////////////////////////////////////////////////////////////////
 // Combos (https://docs.qmk.fm/features/combo)
 ///////////////////////////////////////////////////////////////////////////////
